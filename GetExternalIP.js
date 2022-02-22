@@ -10,7 +10,7 @@
 
 
 function getIP() {
-   fetch('http://ipinfo.io/json')
+   fetch('https://ipinfo.io/json')
     .then(function (response) {
         return response.json();
     })

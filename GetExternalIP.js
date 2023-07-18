@@ -4,7 +4,7 @@
 //Date      : 02/21/2022
 //Purpose   : Get external IP address, display it, and copy it to the clipboard.
 //            More info here: https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-using-javascript
-//Updated   : 
+//Updated   : 07/18/2023 - update copy to clipboard function to use document.execCommand
 //Last Run  :   
 //____________________________
 
@@ -45,7 +45,7 @@ function textToClipboard (txt)
     document.body.appendChild(dummy);
     dummy.value = txt;
     dummy.select();
-    navigator.clipboard.writeText(txt);
-    // document.execCommand("copy");
+    // navigator.clipboard.writeText(txt);
+    document.execCommand("copy");
     document.body.removeChild(dummy);
 }

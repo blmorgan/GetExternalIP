@@ -45,7 +45,7 @@ function textToClipboard (txt)
     document.body.appendChild(dummy);
     dummy.value = txt;
     dummy.select();
-    // navigator.clipboard.writeText(txt);
-    document.execCommand("copy");
+    navigator.clipboard.writeText(txt);
+    // document.execCommand("copy");
     document.body.removeChild(dummy);
 }

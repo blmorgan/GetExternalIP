@@ -18,9 +18,10 @@ function getIP() {
         console.log(data);
         var ipinfo = data;
         var result = '';
-        textToClipboard(data.ip);
         
-        result +='IP: ' + data.ip + ' (copied to clipboard) <br>';
+        textToClipboard(data.ip); 
+        
+        result +='IP: ' + data.ip + '<br>';
         result +='City: ' + data.city + '<br>';
         result +='Region: ' + data.region + '<br>';
         result +='Country: ' + data.country + '<br>';
@@ -30,12 +31,12 @@ function getIP() {
         result +='Timezone: ' + data.timezone + '<br>';      
         
         document.getElementById("Result").innerHTML = result;
-        
+                
     })
     .catch(function (err) {
         console.log("Something went wrong!", err);
     });
-       
+
 }
 
 function textToClipboard (txt) 
@@ -45,7 +46,7 @@ function textToClipboard (txt)
     document.body.appendChild(dummy);
     dummy.value = txt;
     dummy.select();
-    navigator.clipboard.writeText(txt);
-    // document.execCommand("copy");
+    // navigator.clipboard.writeText(txt);
+    document.execCommand("copy");
     document.body.removeChild(dummy);
 }

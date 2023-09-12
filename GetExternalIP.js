@@ -50,3 +50,18 @@ function textToClipboard (txt)
     document.execCommand("copy");
     document.body.removeChild(dummy);
 }
+
+function showConfirm()
+{
+    // show copy confirmation on button click
+    divConf = document.getElementById("copyConfirm");
+    divConf.style.display = "block";
+}
+
+function clickWrapper()
+{
+    // handle button click separately from basic load
+    getIP();
+    showConfirm();
+    
+}
